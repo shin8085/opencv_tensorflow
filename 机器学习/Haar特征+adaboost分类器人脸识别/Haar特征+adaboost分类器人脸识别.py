@@ -9,7 +9,7 @@ import cv2
 #load xml
 xmlFace=cv2.CascadeClassifier('xml/haarcascade_frontalface_default.xml')
 #load jpg
-imgFace=cv2.imread("images/somePeople.jpg")
+imgFace=cv2.imread("somePeople.jpg")
 #haar(opencv已完成) gray
 imgGray=cv2.cvtColor(imgFace,cv2.COLOR_BGR2GRAY)
 #detect 检测人脸 1灰度图片 2缩放系数 3人脸最小的像素值
@@ -19,5 +19,5 @@ print('人脸个数=',len(faces))
 for (x,y,w,h) in faces:
     cv2.rectangle(imgFace,(x,y),(x+w,y+h),(0,0,255),2)
 cv2.imshow('faces',imgFace)
-cv2.imwrite("images/findFaces.jpg",imgFace)
+cv2.imwrite("findFaces.jpg",imgFace)
 cv2.waitKey(0)
